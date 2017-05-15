@@ -17,7 +17,7 @@
 #define TWI_INSTANCE_ID  0//!< TWI INSTANCE
 
 /** FXOS8700CQ TWI address */
-#define FXOS8700CQ_SLAVE_ADDR 0x1C  //if SA0=0 set address 0x1C or if SA0=1 set address 0x1D  	 
+#define FXOS8700CQ_SLAVE_ADDR 0x1c  //if SA0=0 set address 0x1C or if SA0=1 set address 0x1D  	 
 
 /** FXOS8700CQ internal register addresses */
 #define FXOS8700CQ_STATUS           0x00
@@ -139,13 +139,13 @@
 #define FXOS8700CQ_A_FFMT_THS_Z_LSB 0x78
 
 //value
-#define FXOS8700CQ_WHO_AM_I_VAL       0x2A 	  //Who_AM_I register value 
-#define FXOS8700CQ_XYZ_DATA_CFG_VAL   0x10    //Sets the high-pass filter for the output data from registers 0x01 to 0x06
-#define FXOS8700CQ_STANDBY_MODE_VAL	  0x00	  //Standby FXOS8700CQ_CTRL_REG1 register 
-#define FXOS8700CQ_NORMAL_MODE_VAL	  0x02 //1B	  //Normal FXOS8700CQ_CTRL_REG1 register
+#define FXOS8700CQ_WHO_AM_I_VAL       0x2A 	    //Who_AM_I register value 
+#define FXOS8700CQ_XYZ_DATA_CFG_VAL   0x01		//Sets the high-pass filter for the output data from registers 0x01 to 0x06
+#define FXOS8700CQ_STANDBY_MODE_VAL	  0x00	    //Standby FXOS8700CQ_CTRL_REG1 register 
+#define FXOS8700CQ_NORMAL_MODE_VAL	  0x0D 		//Normal FXOS8700CQ_CTRL_REG1 register
 
 // number of bytes to be read from the FXOS8700CQ
-#define FXOS8700CQ_READ_LEN  13 // status plus 6 channels = 13 bytes
+#define FXOS8700CQ_READ_LEN  13 // Status plus 6 channels = 13 bytes
 
 typedef struct
 {
@@ -158,7 +158,6 @@ typedef struct
 
 void FXOS8700CQ_standby(void);
 void FXOS8700CQ_normal(void);
-
 
 bool FXOS8700CQ_TWI_init(void);
 uint8_t FXOS8700CQ_TWI_acc_data_read(fxos_data_t *pAccData, fxos_data_t *pMagData);
